@@ -50,3 +50,5 @@ CREATE TABLE IF NOT EXISTS `PreguntasFrecuentes`(
 	Nombre_pregunta TEXT NOT NULL,
 	Descripcion_pregunta TEXT NOT NULL
 )ENGINE INNODB;
+
+#Hola mafe
