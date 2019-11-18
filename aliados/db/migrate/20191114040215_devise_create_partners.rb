@@ -37,7 +37,7 @@ class DeviseCreatePartners < ActiveRecord::Migration[6.0]
       t.integer :cc
       t.integer :state
       t.string :address
-      t.integer phone
+      t.integer :phone
       t.date :due_date
       t.timestamps null: false
     end
