@@ -1,0 +1,17 @@
+<%= render  "partials/banner" %>
+<%= render  "partials/navigation" %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descipcion:</strong>
+  <%= @report.descipcion %>
+</p>
+
+<p>
+  <strong>Fecha solucion:</strong>
+  <%= @report.fecha_solucion %>
+</p>
+
+<%= link_to 'Edit', edit_report_path(@report) %> |
+<%= link_to 'Back', reports_path %>

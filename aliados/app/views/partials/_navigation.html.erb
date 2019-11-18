@@ -1,0 +1,30 @@
+<div class="w3-row w3-card-2" style="position: sticky; top: 0; z-index: 1;">
+    <div class="w3-bar w3-red">
+        <%= link_to  "Inicio", root_path, 
+        class: "w3-text-white w3-bar-item w3-button w3-hover-light-gray w3-padding-24 navbar-btn" %>
+        
+
+        <%if administrator_signed_in?%>
+            <%= link_to  "Revisar fallas", reports_path, 
+            class: "w3-text-white navbar-btn w3-bar-item w3-button w3-hover-light-gray w3-padding-24" %>
+            <%=link_to "Cerrar sesión", destroy_administrator_session_path, method: :delete, 
+            class: "w3-text-white w3-bar-item w3-button w3-hover-light-gray w3-padding-24 w3-right"%>
+        <%elsif partner_signed_in?%>
+            <%= link_to  "Reportar una novedad", new_incidence_path, 
+            class: "w3-text-white w3-bar-item w3-button w3-hover-light-gray w3-padding-24 navbar-btn" %>
+            <%= link_to  "Reportar una falla", new_report_path, 
+            class: "w3-text-white navbar-btn w3-bar-item w3-button w3-hover-light-gray w3-padding-24" %>
+
+            <%= link_to  "Encuesta", survey_path,
+            class: "w3-text-white navbar-btn w3-bar-item w3-button w3-hover-light-gray w3-padding-24" %>
+            <%=link_to "Cerrar sesión", destroy_administrator_session_path, method: :delete, 
+            class: "w3-text-white w3-bar-item w3-button w3-hover-light-gray w3-padding-24 w3-right"%>
+        <% else %>
+            <%= link_to  "Preguntas frecuentes", root_path, 
+            class: "w3-text-white navbar-btn w3-bar-item w3-button w3-hover-light-gray w3-padding-24" %>
+            <%= link_to  "Iniciar sesión", new_partner_session_path, 
+            class: "w3-text-white w3-bar-item w3-button w3-hover-light-gray w3-padding-24 w3-right" %>
+        <%end%>
+
+    </div>
+</div>

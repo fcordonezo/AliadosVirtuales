@@ -1,0 +1,17 @@
+
+<%= render "partials/banner"%>
+<%= render "partials/navigation"%>
+<div class="w3-container">
+    <div class="w3-row">
+        <div class="w3-half w3-padding-large">
+            <h1>Generar nuevo reporte</h1>
+        </div>
+        <div class="w3-half w3-padding-large" align=right>
+            <%= link_to 'Regresar', reports_path, class:"w3-btn w3-teal" %>
+        </div>
+
+    </div>
+</div>
+
+
+<%= render 'formNew', report: @report %>

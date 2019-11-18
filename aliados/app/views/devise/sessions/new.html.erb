@@ -1,0 +1,57 @@
+<%= render  "partials/banner" %>
+<%= render  "partials/navigation" %>
+
+<div class="w3-row">
+  <div id="background" class="img-login-back img-blur img-gray">
+
+  </div>
+  <div class="w3-third">
+    <br>
+  </div>
+  <div class="w3-third w3-padding-64">
+    <div class="w3-card-2 w3-hover-shadow w3-white" style="z-index: 1;">
+      <div class="w3-container w3-teal w3-padding">
+        <h2 class="w3-text-white">Iniciar sesión</h2>
+      </div>
+      <% flash.each do |type, msg| %>
+        <% if type == "notice" %>
+          <p>Inicio de sesión exitoso</p>
+        <% elsif type == "alert" %>
+        <div class="w3-padding-large">
+          <p class="w3-text-red">Correo o contraseña incorrectos</p>
+        </div>
+          
+        <% end %>
+      <% end %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), :html => {:class => 'w3-padding-24'}) do |f|%>
+        <div class="w3-padding-large">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w3-input" %>
+          <%= f.label :email%>
+        </div>
+      
+        <div class="w3-padding-large">
+          <%= f.password_field :password, autocomplete: "current-password", class: "w3-input" %>
+          <%= f.label :password%>
+        </div>
+      
+        <% if devise_mapping.rememberable? %>
+          <div class="w3-padding-large">
+            <%= f.check_box :remember_me, class: "w3-check" %>
+            <%= f.label "Recuerdame" %>
+          </div>
+        <% end %>
+      
+        <div class="w3-padding-large" style="margin-top: 40px;">
+          <%= f.submit "Ingresar", class: "w3-btn w3-teal w3-text-white" %>
+        </div>
+      <% end %>
+      
+    </div>
+    
+  </div>
+  <div class="w3-third">
+
+  </div>
+</div>
+
+

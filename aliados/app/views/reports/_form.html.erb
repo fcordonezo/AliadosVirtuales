@@ -1,0 +1,34 @@
+<div class="w3-container">
+    <div class="w3-row">
+        <div class="w3-col" style="padding: 10%; padding-top:2%">
+          <%= form_with(model: report, local: true) do |form| %>
+            <% if report.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from being saved:</h2>
+          
+                <ul>
+                  <% report.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+          
+            <div class="field">
+              <%= form.label "Descripción" %>
+              <%= form.text_area :descipcion, class:"w3-input w3-border" %>
+            </div>
+            <div class="field">
+                <%= form.label :fecha_solucion %>
+                <%= form.date_select :fecha_solucion %>
+              </div>
+          
+            <div class="actions">
+              <%= form.submit "Crear", class:"w3-btn w3-teal" %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+</div>
+
+

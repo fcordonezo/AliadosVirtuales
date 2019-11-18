@@ -1,0 +1,17 @@
+<%= render  "partials/banner" %>
+<%= render  "partials/navigation" %>
+<div class="w3-container">
+        <div class="w3-row">
+            <div class="w3-half w3-padding-large">
+                <h1>Crear una novedad</h1>
+            </div>
+            <div class="w3-half w3-padding-large" align=right>
+                <%= link_to 'Regresar', incidences_path, class:"w3-btn w3-teal" %>
+            </div>
+    
+        </div>
+    </div>
+
+<%= render 'formNew', incidence: @incidence %>
+
+

@@ -14,3 +14,28 @@
  *= require_self
  *= require 'w3'
  */
+
+ html, body{
+    height: 100%;
+ }
+ 
+ .navbar-btn{
+    color: aliceblue; 
+    padding-left: 30px;
+    padding-right: 30px;
+ }
+
+ .img-login-back{
+   position:fixed;
+   top:0;
+   left:0;
+   right:0;
+   bottom:0;
+   filter: blur(5px) sepia(80%);
+   -webkit-filter: blur(5px) sepia(80%);
+   -moz-filter: blur(5px) sepia(80%);
+   background-image: url(/assets/enel-back.jpg); 
+   background-repeat: no-repeat; 
+   background-size: 100% 100%;
+   z-index: -1;
+ }

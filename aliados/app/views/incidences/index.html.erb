@@ -1,0 +1,55 @@
+<%= render  "partials/banner" %>
+<%= render  "partials/navigation" %>
+
+<p id="notice"><%= notice %></p>
+
+<div class="w3-container">
+  <div class="w3-row">
+    <div class="w3-col">
+      <h1 class="w3-text-black">Reporte de novedades</h1>
+    </div>
+  </div>
+</div>
+
+
+<div class="w3-container">
+  <div class="w3-row">
+    <div class="w3-half">
+      <section class="w3-large w3-padding-24">
+      
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container">
+    <div class="w3-row">
+      <div class="w3-col w3-padding-large">
+        <table class="w3-table-all w3-card-4">
+          <tr>
+            <th>Descripción</th>
+            <th>Fecha de solución</th>
+            <th>Mostrar</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+          <% @incidences.each do |incidence| %>
+            <tr>
+              <td><%= incidence.descripcion %></td>
+              <td><%= incidence.fecha_solucion %></td>
+              <td><%= link_to 'Mostrar', incidence %></td>
+              <td><%= link_to 'Editar', edit_incidence_path(incidence) %></td>
+              <td><%= link_to 'Eliminar', incidence, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+<br>
+
+
+<!-- <%= link_to 'New Report', new_report_path %> -->
+

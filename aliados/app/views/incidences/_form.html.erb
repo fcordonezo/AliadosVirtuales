@@ -1,0 +1,27 @@
+<%= form_with(model: incidence, local: true) do |form| %>
+  <% if incidence.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(incidence.errors.count, "error") %> prohibited this incidence from being saved:</h2>
+
+      <ul>
+        <% incidence.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label "descripción" %>
+    <%= form.text_area :descripcion %>
+  </div>
+
+  <div class="field">
+    <%= form.label "fecha de solución" %>
+    <%= form.date_select :fecha_solucion %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

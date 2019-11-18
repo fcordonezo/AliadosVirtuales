@@ -1,0 +1,56 @@
+<%= render  "partials/banner" %>
+<%= render  "partials/navigation" %>
+
+<p id="notice"><%= notice %></p>
+
+<div class="w3-container">
+  <div class="w3-row">
+    <div class="w3-col">
+      <h1 class="w3-text-black">Reporte de fallas</h1>
+    </div>
+  </div>
+</div>
+
+
+<div class="w3-container">
+  <div class="w3-row">
+    <div class="w3-half">
+      <section class="w3-large w3-padding-24">
+        En este espacio el aliado podrá reportar cualquier tipo de falla con la plataforma para prestar
+        el servicio de oficina virtual.
+      </section>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container">
+    <div class="w3-row">
+      <div class="w3-col w3-padding-large">
+        <table class="w3-table-all w3-card-4">
+          <tr>
+            <th>Descripción</th>
+            <th>Fecha de solución</th>
+            <th>Mostrar</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+          </tr>
+          <% @reports.each do |report| %>
+            <tr>
+              <td><%= report.descipcion %></td>
+              <td><%= report.fecha_solucion %></td>
+              <td><%= link_to 'Mostrar', report %></td>
+              <td><%= link_to 'Editar', edit_report_path(report) %></td>
+              <td><%= link_to 'Eliminar', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+<br>
+
+
+<!-- <%= link_to 'New Report', new_report_path %> -->
+

@@ -1,0 +1,16 @@
+<%= render  "partials/banner" %>
+<%= render  "partials/navigation" %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @incidence.descripcion %>
+</p>
+
+<p>
+  <strong>Fecha solución:</strong>
+  <%= @incidence.fecha_solucion %>
+</p>
+
+<%= link_to 'Edit', edit_incidence_path(@incidence) %> |
+<%= link_to 'Back', incidences_path %>
