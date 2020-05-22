@@ -112,7 +112,7 @@ GEM
     orm_adapter (0.5.0)
     pg (0.15.1)
     public_suffix (4.0.1)
-    puma (4.3.0)
+    puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.0.7)
     rack-proxy (0.6.5)
@@ -184,7 +184,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.1)
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -227,14 +226,13 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
   pg (= 0.15.1)
-  puma (~> 4.1)
+  puma (~> 4.3)
   rails (~> 6.0.1)
   rails_12factor (= 0.0.2)
   sass-rails (>= 6)
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
   w3-rails
